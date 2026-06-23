@@ -5,6 +5,8 @@ import MyArticle from "./components/MyArticle";
 import { useState } from "react";
 
 function App() {
+  console.log("App render");
+  const [id, setId] = useState(1);
   const [mode, setMode] = useState("welcome");
   const [subject, setSubject] = useState({
     title: "프론트엔드 개발자",
@@ -23,11 +25,40 @@ function App() {
   if (mode === "welcome") {
     _title = welcome.title;
     _desc = welcome.desc;
+  } else if (mode === "read") {
+    const selected = content.find(c => c.id === id);
+    if (selected) {
+      _title = selected.title;
+      _desc = selected.desc;
+    }
   }
   return (
     <>
-      <Myheader title={subject.title} desc={subject.desc} />
-      <Nav data={content} />
+      <Myheader
+        title={subject.title}
+        desc={subject.desc}
+        onChangeMode={() => {
+          setMode("welcome");
+        }}
+      />
+      {/* <header>
+        <h1
+          className="logo"
+          onClick={() => {
+            setMode("welcome");
+          }}
+        >
+          {subject.title}
+        </h1>
+        <p>{subject.desc}</p>
+      </header> */}
+      <Nav
+        data={content}
+        onChangeMode={_id => {
+          setMode("read");
+          setId(_id);
+        }}
+      />
       <MyArticle title={_title} desc={_desc} />
     </>
   );
