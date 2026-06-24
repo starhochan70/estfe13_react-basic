@@ -1,5 +1,7 @@
+import { memo } from "react";
+
 //Nav 컴포넌트
-function Nav({ data, onChangeMode }) {
+const Nav = memo(function Nav({ data, onChangeMode }) {
   console.log("Nav render");
   //lists에 출력할 코드 생성
   const lists = data.map(d => (
@@ -23,5 +25,5 @@ function Nav({ data, onChangeMode }) {
       <ul>{lists}</ul>
     </nav>
   );
-}
+});
 export default Nav;
