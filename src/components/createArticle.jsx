@@ -9,12 +9,11 @@ function CreateArticle() {
         </div>
         <div>
           <label htmlFor="desc">desc</label>
-          <textarea type="text" id="desc"></textarea>
+          <textarea name="" id="desc"></textarea>
         </div>
         <button>Submit</button>
       </form>
     </>
   );
 }
-
 export default CreateArticle;

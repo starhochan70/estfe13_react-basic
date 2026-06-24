@@ -1,4 +1,4 @@
-function Controls(onChangeMode) {
+function Controls({ onChangeMode }) {
   return (
     <div className="menu">
       <button
