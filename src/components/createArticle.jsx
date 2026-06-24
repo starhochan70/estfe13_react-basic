@@ -1,4 +1,4 @@
-function CreateArticle(onSubmit) {
+function CreateArticle({ onSubmit }) {
   console.log("CreateArticle render");
   return (
     <>
@@ -7,8 +7,6 @@ function CreateArticle(onSubmit) {
         action=""
         onSubmit={e => {
           e.preventDefault();
-          console.log(e.target.title.value);
-          console.log(e.target.desc.value);
           onSubmit(e.target.title.value, e.target.desc.value);
         }}
       >

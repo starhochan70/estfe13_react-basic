@@ -23,7 +23,7 @@ function App() {
     },
     { id: 3, title: "애니메이션 구현", desc: "상태 변화에 따른 자연스럽고 동적인 화면 효과 구현" },
   ]);
-  const [maxId, setMaxId] = useState(3);
+  const [maxId, setMaxid] = useState(3);
 
   const welcome = { title: "welcome", desc: "Welcome to react" };
 
@@ -51,7 +51,7 @@ function App() {
 
           let _contents = content.concat({ id: newId, title: _title, desc: _desc });
           setContent(_contents);
-          setMaxId(newId);
+          setMaxid(newId);
         }}
       />
     );
